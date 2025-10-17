@@ -1,0 +1,9 @@
+.App {
+  font-family: "Times New Roman", Times, serif;
+}
+
+.App .container {
+  max-width: 800px;
+  display: block;
+  margin: 50px auto;
+}
