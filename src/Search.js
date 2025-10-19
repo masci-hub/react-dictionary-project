@@ -24,7 +24,7 @@ export default function Search() {
 
   return (
     <div className="Search">
-      <form onSubmit={handleSubmit}>
+      <form className="d-flex justify-content-center" onSubmit={handleSubmit}>
         <input
           type="search"
           placeholder="Type a word..."
