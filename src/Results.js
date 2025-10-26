@@ -9,13 +9,7 @@ export default function Results(props) {
           <h2 className="fw-bold">{props.results.word}</h2>
           <h3 className="opacity-75">{props.results.phonetic}</h3>
         </section>
-        {props.results.meanings.map(function (meaning, index) {
-          return (
-            <div key={index}>
-              <Meaning meaning={meaning} />
-            </div>
-          );
-        })}
+        <Meaning meaning={props.results.meanings} />
       </div>
     );
   } else {

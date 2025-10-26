@@ -10,15 +10,21 @@ export default function Search() {
     setResults(response.data);
   }
 
-  function searchWord() {
+  function searchWord(keyword) {
     const apiKey = "733615547b11515efo464ab9111t0c1b";
-    let apiUrl = `https://api.shecodes.io/dictionary/v1/define?word=${word}&key=${apiKey}`;
+    let apiUrl = `https://api.shecodes.io/dictionary/v1/define?word=${keyword}&key=${apiKey}`;
     axios.get(apiUrl).then(handleResponse);
   }
 
   function handleSubmit(event) {
+    if (word.length > 0) {
+      searchWord(word);
+    } else {
+      alert("Please enter a word");
+    }
     event.preventDefault();
-    searchWord();
+
+    setWord("");
   }
 
   function getWord(event) {
@@ -35,16 +41,22 @@ export default function Search() {
           autoFocus="on"
           onChange={getWord}
           className="form-control"
+          value={word}
         ></input>
       </form>
       <p className="opacity-75 mt-4">e.g. book, sunset, forest</p>
     </section>
   );
 
-  return (
-    <div className="Search">
-      {searchForm}
-      <Results results={results} />
-    </div>
-  );
+  if (results) {
+    return (
+      <div className="Search">
+        {searchForm}
+        <Results results={results} />
+      </div>
+    );
+  } else {
+    searchWord("book");
+    return "Loading";
+  }
 }

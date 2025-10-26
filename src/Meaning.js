@@ -2,14 +2,22 @@ import React from "react";
 import Synonyms from "./Synonyms";
 
 export default function Meaning(props) {
-  return (
-    <div className="Meaning">
-      <section>
-        <h4 className="fw-bold">{props.meaning.partOfSpeech}</h4>
-        <p>{props.meaning.definition}</p>
-        <p className="fst-italic">{props.meaning.example}</p>
-        <Synonyms synonyms={props.meaning.synonyms} />
-      </section>
-    </div>
-  );
+  if (props.meaning) {
+    return (
+      <div className="Meaning">
+        {props.meaning.map(function (meaning, index) {
+          return (
+            <section key={index}>
+              <h4 className="fw-bold">{meaning.partOfSpeech}</h4>
+              <p>{meaning.definition}</p>
+              <p className="fst-italic">{meaning.example}</p>
+              <Synonyms synonyms={meaning.synonyms} />
+            </section>
+          );
+        })}
+      </div>
+    );
+  } else {
+    return null;
+  }
 }
