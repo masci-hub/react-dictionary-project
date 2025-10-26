@@ -32,8 +32,8 @@
 
 .App li {
   list-style-type: none;
-  display: inline;
-  margin-right: 10px;
+  display: inline-block;
+  padding-right: 15px;
 }
 
 .App ul {

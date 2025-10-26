@@ -34,14 +34,14 @@ export default function Search() {
 
   let searchForm = (
     <section>
-      <h3 className="mt-3 mb-4">What word do you want to look for?</h3>
+      <h3 className="mt-3 mb-4">What word do you want to look up?</h3>
       <form onSubmit={handleSubmit}>
         <input
           type="search"
           placeholder="Type a word..."
           autoFocus="on"
           onChange={getWord}
-          className="form-control"
+          className="form-control form-control-lg"
           value={word}
         ></input>
       </form>
