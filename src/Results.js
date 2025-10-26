@@ -5,8 +5,10 @@ export default function Results(props) {
   if (props.results) {
     return (
       <div className="Results">
-        <h2 className="mt-3 fw-bold">{props.results.word}</h2>
-        <h3 className="mb-2 opacity-75">{props.results.phonetic}</h3>
+        <section>
+          <h2 className="fw-bold">{props.results.word}</h2>
+          <h3 className="opacity-75">{props.results.phonetic}</h3>
+        </section>
         {props.results.meanings.map(function (meaning, index) {
           return (
             <div key={index}>

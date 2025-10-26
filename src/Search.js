@@ -24,15 +24,19 @@ export default function Search() {
 
   return (
     <div className="Search">
-      <form className="d-flex justify-content-center" onSubmit={handleSubmit}>
-        <input
-          type="search"
-          placeholder="Type a word..."
-          className="form-control w-50"
-          autoFocus="on"
-          onChange={getWord}
-        ></input>
-      </form>
+      <section>
+        <h3 className="mt-3 mb-4">What word do you want to look for?</h3>
+        <form onSubmit={handleSubmit}>
+          <input
+            type="search"
+            placeholder="Type a word..."
+            autoFocus="on"
+            onChange={getWord}
+            className="form-control"
+          ></input>
+        </form>
+        <p className="opacity-75 mt-4">e.g. book, sunset, forest</p>
+      </section>
       <Results results={results} />
     </div>
   );
