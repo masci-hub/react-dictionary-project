@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Results from "./Results";
+import { ClipLoader } from "react-spinners";
 
 export default function Search() {
   let [word, setWord] = useState("");
@@ -57,6 +58,20 @@ export default function Search() {
     );
   } else {
     searchWord("book");
-    return "Loading";
+    return (
+      <ClipLoader
+        color="#6c63ff"
+        loading={true}
+        size={70}
+        speedMultiplier={1}
+        cssOverride={override}
+        className="mb-5"
+      />
+    );
   }
 }
+
+const override = {
+  display: "block",
+  margin: "0 auto",
+};
