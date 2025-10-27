@@ -12,6 +12,7 @@ export default function Images(props) {
                   <a href={image.src.original} target="_blank" rel="noreferrer">
                     <img
                       src={image.src.landscape}
+                      alt={image.alt}
                       className="img-fluid mb-4"
                     ></img>
                   </a>
