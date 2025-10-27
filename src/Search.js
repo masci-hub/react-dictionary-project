@@ -2,19 +2,29 @@ import React, { useState } from "react";
 import axios from "axios";
 import Results from "./Results";
 import { ClipLoader } from "react-spinners";
+import Images from "./Images";
 
 export default function Search() {
   let [word, setWord] = useState("");
   let [results, setResults] = useState("");
+  let [images, setImages] = useState("");
 
-  function handleResponse(response) {
+  function handleImagesResponse(response) {
+    setImages(response.data);
+  }
+
+  function handleDictionaryResponse(response) {
     setResults(response.data);
   }
 
   function searchWord(keyword) {
     const apiKey = "733615547b11515efo464ab9111t0c1b";
-    let apiUrl = `https://api.shecodes.io/dictionary/v1/define?word=${keyword}&key=${apiKey}`;
-    axios.get(apiUrl).then(handleResponse);
+
+    let dictionaryApiUrl = `https://api.shecodes.io/dictionary/v1/define?word=${keyword}&key=${apiKey}`;
+    axios.get(dictionaryApiUrl).then(handleDictionaryResponse);
+
+    let imagesApiUrl = `https://api.shecodes.io/images/v1/search?query=${keyword}&key=${apiKey}`;
+    axios.get(imagesApiUrl).then(handleImagesResponse);
   }
 
   function handleSubmit(event) {
@@ -54,6 +64,7 @@ export default function Search() {
       <div className="Search">
         {searchForm}
         <Results results={results} />
+        <Images images={images} />
       </div>
     );
   } else {

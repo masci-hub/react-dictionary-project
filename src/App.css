@@ -39,3 +39,7 @@
 .App ul {
   padding-left: 0;
 }
+
+.App img {
+  border-radius: 5px;
+}
