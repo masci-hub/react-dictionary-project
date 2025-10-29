@@ -8,7 +8,9 @@ export default function App() {
     <div className="App">
       <div className="container">
         <header>
-          <h1 className="text-center fw-bold pt-5 mb-5">Dictionary</h1>
+          <h1 className="text-center text-uppercase fw-bold pt-5 mb-5">
+            Dictionary
+          </h1>
         </header>
         <main>
           <Search />

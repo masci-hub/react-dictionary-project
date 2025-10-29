@@ -7,7 +7,7 @@ export default function Results(props) {
       <div className="Results">
         <section>
           <h2 className="fw-bold">{props.results.word}</h2>
-          <h3 className="opacity-75">{props.results.phonetic}</h3>
+          <h2 className="opacity-75">{props.results.phonetic}</h2>
         </section>
         <Meaning meaning={props.results.meanings} />
       </div>

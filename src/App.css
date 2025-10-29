@@ -12,8 +12,7 @@
 .App h1,
 h2,
 h3,
-h4,
-h5 {
+h4 {
   font-family: "Playfair Display", serif;
 }
 
@@ -27,7 +26,7 @@ h5 {
 
 .App header h1 {
   color: #342f51;
-  letter-spacing: 3px;
+  letter-spacing: 5px;
 }
 
 .App footer p {

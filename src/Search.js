@@ -51,7 +51,7 @@ export default function Search() {
           placeholder="Type a word..."
           autoFocus="on"
           onChange={getWord}
-          className="form-control form-control-lg"
+          className="form-control"
           value={word}
         ></input>
       </form>
