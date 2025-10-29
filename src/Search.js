@@ -71,7 +71,7 @@ export default function Search() {
     searchWord("book");
     return (
       <ClipLoader
-        color="#6c63ff"
+        color="var(--secondary-color)"
         loading={true}
         size={70}
         speedMultiplier={1}

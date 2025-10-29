@@ -1,6 +1,14 @@
+:root {
+  --default-font-family: "Roboto", sans-serif;
+  --heading-font-family: "Playfair Display", serif;
+  --branding-color: #342f51;
+  --secondary-color: #6c63ff;
+  --tertiary-color: #f9f7fe;
+}
+
 .App {
-  background-color: #f9f7fe;
-  font-family: "Roboto", sans-serif;
+  background-color: var(--tertiary-color);
+  font-family: var(--default-font-family);
 }
 
 .App .container {
@@ -13,7 +21,7 @@
 h2,
 h3,
 h4 {
-  font-family: "Playfair Display", serif;
+  font-family: var(--heading-font-family);
 }
 
 .App section {
@@ -25,17 +33,17 @@ h4 {
 }
 
 .App header h1 {
-  color: #342f51;
+  color: var(--branding-color);
   letter-spacing: 5px;
 }
 
 .App footer p {
-  color: #342f51;
+  color: var(--branding-color);
 }
 
 .App a {
   text-decoration: none;
-  color: #6c63ff;
+  color: var(--secondary-color);
 }
 
 .App li {
