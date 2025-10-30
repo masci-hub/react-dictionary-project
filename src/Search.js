@@ -7,29 +7,21 @@ import Images from "./Images";
 export default function Search() {
   let [word, setWord] = useState("");
   let [results, setResults] = useState("");
-  let [images, setImages] = useState("");
-
-  function handleImagesResponse(response) {
-    setImages(response.data);
-  }
 
   function handleDictionaryResponse(response) {
     setResults(response.data);
   }
 
-  function searchWord(keyword) {
+  function searchWordDefinition(keyword) {
     const apiKey = "733615547b11515efo464ab9111t0c1b";
 
     let dictionaryApiUrl = `https://api.shecodes.io/dictionary/v1/define?word=${keyword}&key=${apiKey}`;
     axios.get(dictionaryApiUrl).then(handleDictionaryResponse);
-
-    let imagesApiUrl = `https://api.shecodes.io/images/v1/search?query=${keyword}&key=${apiKey}`;
-    axios.get(imagesApiUrl).then(handleImagesResponse);
   }
 
   function handleSubmit(event) {
     if (word.length > 0) {
-      searchWord(word);
+      searchWordDefinition(word);
     } else {
       alert("Please enter a word");
     }
@@ -64,11 +56,11 @@ export default function Search() {
       <div className="Search">
         {searchForm}
         <Results results={results} />
-        <Images images={images} />
+        <Images word={results.word} />
       </div>
     );
   } else {
-    searchWord("book");
+    searchWordDefinition("book");
     return (
       <ClipLoader
         color="var(--secondary-color)"
